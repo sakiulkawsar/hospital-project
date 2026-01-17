@@ -100,6 +100,9 @@
                         </form>
              
             </li>
+              <li class="nav-item">
+              <a class="" href="{{ route('dashboard') }}">Dashboard</a>
+            </li>
             @endif
           </ul>
         </div> <!-- .navbar-collapse -->
