@@ -41,4 +41,11 @@ class AdminController extends Controller
         $doctor->delete();
         return redirect()->back();
     }
+
+     public function updateDoctor($id){
+        $doctor = Doctor::findOrFail($id);
+
+      
+        return view('admin.update_doctors', compact('doctor'));
+    }
 }

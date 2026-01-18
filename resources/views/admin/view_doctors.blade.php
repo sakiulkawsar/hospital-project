@@ -2,7 +2,7 @@
 
 @section('view_doctors')
 
-<div class="container-fluid p-0 m-0">
+<div class="container-fluid ">
     <div class="row m-0">
         <div class="col-12 p-0">
 
@@ -14,7 +14,7 @@
             <th>Specialty</th>
             <th>Room</th>
             <th>Image</th>
-            <th>Action</th>
+            <th colspan="2">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -33,6 +33,13 @@
                    onclick="return confirm('Are you sure?')"
                    style="background:#dc3545;color:#fff;padding:6px 12px;text-decoration:none;border-radius:4px;">
                     Delete
+                </a>
+            </td>
+              <td>
+                <a href="{{ route('update_doctor', $doctor->id) }}"
+                   
+                   style="background:green;color:#fff;padding:6px 12px;text-decoration:none;border-radius:4px;">
+                    Update
                 </a>
             </td>
         </tr>

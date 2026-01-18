@@ -69,8 +69,6 @@
         </ul>
       </nav>
       <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_navbar.html -->
         <nav class="navbar p-0 fixed-top d-flex flex-row">
           <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
             <a class="navbar-brand brand-logo-mini" href="index.html"><img src="admin_end/assets/images/logo-mini.svg" alt="logo" /></a>
@@ -133,8 +131,6 @@
         </nav>
         <!-- partial -->
       
-        <!-- main-panel ends -->
-      </div>
       <div class="main-panel">
        @yield('dashboard')
           @yield('add_doctors')
