@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Doctor;
+use App\Models\Appointment;
+
 
 class userController extends Controller
 {
@@ -30,5 +32,21 @@ class userController extends Controller
    public function allDoctors() {
     $doctors = Doctor::all();
     return view('doctors', compact('doctors'));
+}
+
+public function Appointment(Request $request)
+{
+    $appointment = new Appointment();
+
+    $appointment->full_name = $request->full_name;
+    $appointment->email_address = $request->email_address;
+    $appointment->submission_date = $request->submission_date;
+    $appointment->specialty = $request->specialty;
+    $appointment->number = $request->number;
+    $appointment->message = $request->message;
+
+    $appointment->save();
+
+    return redirect()->back()->with('appointment_message', 'Appointment submitted successfully!');
 }
 }
