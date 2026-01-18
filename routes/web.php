@@ -20,7 +20,8 @@ Route::get('/', [UserController::class,'Index'])->name('Index');
 Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth', 'verified'])->name('dashboard');
 
   Route::middleware('auth','admin')->group(function () {
- Route::get('/add_doctors',[AdminController::class,'addDoctors'] )->middleware(['auth', 'verified'])->name('add_doctors');
+    Route::get('/add_doctors',[AdminController::class,'addDoctors'] )->middleware(['auth', 'verified'])->name('add_doctors');
+    Route::post('/add_doctors',[AdminController::class,'postAddDoctors'] )->middleware(['auth', 'verified'])->name('add_doctors.store');
 });  
 
 Route::middleware('auth')->group(function () {

@@ -1,6 +1,6 @@
 @extends('admin.maindesign')
 @section('add_doctors')
-<form action="{{ route('add_doctors') }}" method="post" enctype="multipart/form-data">
+<form action="{{ route('add_doctors.store') }}" method="post" enctype="multipart/form-data">
     @csrf
   @if(session('success'))
     <div class="alert alert-success">
