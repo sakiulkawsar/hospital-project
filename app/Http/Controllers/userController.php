@@ -26,4 +26,9 @@ class userController extends Controller
     $doctors = Doctor::all();
     return view('index', compact('doctors'));
 }
+
+   public function allDoctors() {
+    $doctors = Doctor::all();
+    return view('doctors', compact('doctors'));
+}
 }

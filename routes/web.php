@@ -17,7 +17,9 @@ use App\Http\Controllers\AdminController;
 |
 */
 Route::get('/', [UserController::class,'Index'])->name('Index');
+Route::get('/alldoctors',[UserController::class,'allDoctors'] )->name('alldoctors');
 Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth', 'verified'])->name('dashboard');
+ 
 
   Route::middleware('auth','admin')->group(function () {
     Route::get('/add_doctors',[AdminController::class,'addDoctors'] )->middleware(['auth', 'verified'])->name('add_doctors');
