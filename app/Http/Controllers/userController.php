@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Doctor;
 
 class userController extends Controller
 {
@@ -21,7 +22,8 @@ class userController extends Controller
             }
         
     }
-    public function Index (){
-        return view ('index');
-    }
+   public function Index() {
+    $doctors = Doctor::all();
+    return view('index', compact('doctors'));
+}
 }
