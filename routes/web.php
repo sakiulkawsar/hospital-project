@@ -29,6 +29,8 @@ Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth
      Route::get('/view_doctors',[AdminController::class,'viewDoctors'] )->middleware(['auth', 'verified'])->name('view_doctors');
      Route::get('/delete_doctor/{id}',[AdminController::class,'deleteDoctor'] )->name('delete_doctor');
      Route::get('/update_doctor/{id}',[AdminController::class,'updateDoctor'] )->name('update_doctor');
+     Route::post('/post_update_doctors/{id}',[AdminController::class,'postUpdateDoctors'] )->name('post_update_doctors');
+     Route::get('/view_appointment',[AdminController::class,'viewAppointment'] )->name('view_appointment');
 });  
 
 Route::middleware('auth')->group(function () {

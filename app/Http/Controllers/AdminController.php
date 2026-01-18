@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Appointment;
 
 class AdminController extends Controller
 {
@@ -47,5 +48,30 @@ class AdminController extends Controller
 
       
         return view('admin.update_doctors', compact('doctor'));
+    }
+
+    public function postUpdateDoctors(Request $request, $id){
+        $doctor = Doctor::findOrFail($id);
+ $doctor->doctors_name  = $request->doctors_name;
+            $doctor->doctors_phone = $request->doctors_phone;
+            $doctor->specialty     = $request->specialty;
+            $doctor->room_number   = $request->room_number;
+
+            if ($request->hasFile('doctor_image')) {
+                $image = $request->file('doctor_image');
+                $name = time().'.'.$image->getClientOriginalExtension();
+                $image->move(public_path('doctor_images'), $name);
+
+                $doctor->doctor_image = 'doctor_images/'.$name;
+            }
+
+            $doctor->save();
+
+            return redirect()->back()->with('success', 'Doctor update successfully');
+
+    }
+   public function viewAppointment(){
+    $appointments = Appointment::all(); // plural
+    return view('admin.view_appointment', compact('appointments'));
     }
 }

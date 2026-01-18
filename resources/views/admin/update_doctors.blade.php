@@ -2,7 +2,7 @@
 <base href="/public">
 
 @section('view_doctors')
-<form action="{{ route('add_doctors.store') }}" method="post" enctype="multipart/form-data" style="padding-left: 100px;">
+<form action="{{ route('post_update_doctors', $doctor->id) }}" method="post" enctype="multipart/form-data" style="padding-left: 100px;">
     @csrf
 
     @if(session('success'))
