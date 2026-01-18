@@ -1,6 +1,7 @@
 @extends('maindesign')
 @section('index_page')
 @include('hero')
+  
 
   <div class="page-section">
     <div class="container">
