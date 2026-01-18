@@ -31,6 +31,8 @@ Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth
      Route::get('/update_doctor/{id}',[AdminController::class,'updateDoctor'] )->name('update_doctor');
      Route::post('/post_update_doctors/{id}',[AdminController::class,'postUpdateDoctors'] )->name('post_update_doctors');
      Route::get('/view_appointment',[AdminController::class,'viewAppointment'] )->name('view_appointment');
+      Route::post('/changestatus/{id}',[AdminController::class,'changeStatus'] )->name('changestatus');
+     
 });  
 
 Route::middleware('auth')->group(function () {

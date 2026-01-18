@@ -74,4 +74,12 @@ class AdminController extends Controller
     $appointments = Appointment::all(); // plural
     return view('admin.view_appointment', compact('appointments'));
     }
+
+     public function changeStatus(Request $request, $id){
+        $appointments = Appointment::findOrFail($id); 
+
+         $appointments-> status=$request->status;
+         $appointments->save();
+         return redirect()->back();
+     }
 }
