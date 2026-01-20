@@ -25,52 +25,58 @@
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_sidebar.html -->
-    <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="index.html"><img src="admin_end/assets/images/logo.svg" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="index.html"><img src="admin_end/assets/images/logo-mini.svg" alt="logo" /></a>
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+       <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+     aria-labelledby="profileDropdown"
+     style="
+        right: 0;
+        left: auto;
+        top: 60px;
+        min-width: 180px;
+        padding: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+        position: absolute;
+        z-index: 9999;
+     ">
+         <h3>Admin</h3>
+       
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="admin_end/assets/images/faces/face15.jpg" alt="">
+                   <di>Dashboard</di>
                   <span class="count bg-success"></span>
                 </div>
-                <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Admin</h5>
-                  <span>Admin Member</span>
-                </div>
+              
               </div>
-             
-              <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
             
-              </div>
             </div>
           </li>
           <li class="nav-item nav-category">
-            <span class="nav-link"><h4>Admin Dashboard</h4></span>
+            <span class="nav-link">Navigation</span>
           </li>
-       
+   
           <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
               <span class="menu-icon">
-                <i class="mdi mdi-laptop"></i>
+                <i class="mdi mdi-security"></i>
               </span>
               <span class="menu-title">Admin page</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-basic">
+            <div class="collapse" id="auth">
               <ul class="nav flex-column sub-menu">
-                 <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}"> Add Doctors </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}"> Add Doctors </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('view_doctors') }}"> View Doctors </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Doctor Appointment </a></li>
                
               </ul>
             </div>
           </li>
-        
+       
         </ul>
       </nav>
       <!-- partial -->
