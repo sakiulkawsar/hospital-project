@@ -13,11 +13,15 @@ class userController extends Controller
     public function Dashboard(){
         if(Auth::check()&&Auth::user()->user_type=='user')
             {
-              return view('dashboard');
+              return view('user.dashboard');
             }
            else if(Auth::check()&&Auth::user()->user_type=='admin')
             {
               return view('admin.dashboard');
+            }
+               else if(Auth::check()&&Auth::user()->user_type=='doctor')
+            {
+              return view('doctor.dashboard');
             }
             else{
                 return redirect('/');
