@@ -1,4 +1,4 @@
-@extends('admin.maindesign')
+@extends('doctor.main')
 
 @section('main')
 
