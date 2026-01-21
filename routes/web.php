@@ -48,7 +48,7 @@ Route::middleware(['auth', 'doctor', 'verified'])->group(function () {
        Route::get('/delete_patient/{id}',[DoctorController::class,'deletePatient'] )->name('delete_patient');
      Route::get('/update_patient/{id}',[DoctorController::class,'updatePatient'] )->name('update_patient');
      
-     Route::post('/update_patient/{id}',[DoctorController::class, 'postUpdatePatient'])->name('post_update_patients'); 
+     Route::post('/post_update_patient/{id}',[DoctorController::class, 'postUpdatePatient'])->name('post_update_patients'); 
     
 
         
