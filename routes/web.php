@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\userController as ControllersUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,10 @@ use App\Http\Controllers\AdminController;
 Route::get('/', [UserController::class,'Index'])->name('Index');
 Route::get('/alldoctors',[UserController::class,'allDoctors'] )->name('alldoctors');
 Route::post('/appointment', [UserController::class,'Appointment'])->name('appointment');
+
+Route::get('/contact',[userController::class,'contact'])->name('contact');
+Route::get('/appointment',[userController::class,'appointments'])->name('appointment');
+
 
 Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth', 'verified'])->name('dashboard');
  

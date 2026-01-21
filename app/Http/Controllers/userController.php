@@ -26,12 +26,12 @@ class userController extends Controller
     }
    public function Index() {
     $doctors = Doctor::all();
-    return view('index', compact('doctors'));
+    return view('index',compact('doctors'));
 }
 
    public function allDoctors() {
     $doctors = Doctor::all();
-    return view('doctors', compact('doctors'));
+    return view('doctors',compact('doctors'));
 }
 
 public function Appointment(Request $request)
@@ -49,4 +49,16 @@ public function Appointment(Request $request)
 
     return redirect()->back()->with('appointment_message', 'Appointment submitted successfully!');
 }
+
+
+public function contact()
+{
+    return view ('contact');
+}
+
+
+public function appointments(){
+    return view('appointment');
+}
+
 }

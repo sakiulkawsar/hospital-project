@@ -1,5 +1,5 @@
 @extends('maindesign')
-@section('index_page')
+@section('all_doctors')
 @include('hero')
   
 
@@ -18,10 +18,10 @@
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                     </div>
                 </div>
-                <div class="body">
+                {{-- <div class="body">
                     <p class="text-xl mb-0">{{ $doctor->doctors_name }}</p>
                     <span class="text-sm text-grey">{{ $doctor->specialty }}</span>
-                </div>
+                </div> --}}
             </div>
         </div>
     @endforeach
