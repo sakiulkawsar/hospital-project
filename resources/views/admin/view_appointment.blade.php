@@ -1,6 +1,6 @@
 @extends('admin.maindesign')
 
-@section('view_appointment')
+@section('main')
 <div class="container-fluid">
     <!-- table wrapper for horizontal scroll -->
     <div class="table-responsive" style="overflow-x:auto;">

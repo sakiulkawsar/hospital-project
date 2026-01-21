@@ -11,32 +11,32 @@
         <tr style="background-color:lightblue;">
             <th>Name</th>
             <th>Phone</th>
-            <th>Specialty</th>
-            <th>Room</th>
+            <th>Problem</th>
+           
             <th>Image</th>
             <th colspan="2">Action</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($doctors as $doctor)
+        @foreach ($patients as $patient)
         <tr>
-            <td>{{ $doctor->doctors_name }}</td>
-            <td>{{ $doctor->doctors_phone }}</td>
-            <td>{{ $doctor->specialty }}</td>
-            <td>{{ $doctor->room_number }}</td>
+            <td>{{ $patient->patients_name }}</td>
+            <td>{{ $patient->patients_phone }}</td>
+            <td>{{ $patient->problem }}</td>
+           
             <td>
-                <img src="{{ $doctor->doctor_image_url }}"
+                <img src="{{ $patient->patient_image_url }}"
                      style="width:100px;height:100px;">
             </td>
             <td>
-                <a href="{{ route('delete_doctor', $doctor->id) }}"
+                <a href="{{ route('delete_patient', $patient->id) }}"
                    onclick="return confirm('Are you sure?')"
                    style="background:#dc3545;color:#fff;padding:6px 12px;text-decoration:none;border-radius:4px;">
                     Delete
                 </a>
             </td>
               <td>
-                <a href="{{ route('update_doctor', $doctor->id) }}"
+                <a href="{{ route('update_patient', $patient->id) }}"
                    
                    style="background:green;color:#fff;padding:6px 12px;text-decoration:none;border-radius:4px;">
                     Update

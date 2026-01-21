@@ -1,7 +1,7 @@
 @extends('admin.maindesign')
 <base href="/public">
 
-@section('view_doctors')
+@section('main')
 <form action="{{ route('post_update_doctors', $doctor->id) }}" method="post" enctype="multipart/form-data" style="padding-left: 100px;">
     @csrf
 

@@ -137,10 +137,8 @@
         <!-- partial -->
       
       <div class="main-panel">
-       @yield('dashboard')
-          @yield('add_doctors')
-          @yield('view_doctors')
-          @yield('view_appointment')
+       @yield('main')
+       
       
       </div>
       <!-- page-body-wrapper ends -->

@@ -26,11 +26,11 @@
 
         <div>
             <label style="border-radius: 12px; padding: 8px" class="bg bg-primary" for="patients_image">Upload Patients's image</label>
-        <input type="file" name="patients_image" >
+        <input type="file" name="patient_image" >
 
     </div><br><br>
     <div>
-        <input type="submit" name="submit" value="add-doctor">
+        <input type="submit" name="submit" value="add-patients">
     </div>
 
 </form>

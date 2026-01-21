@@ -1,5 +1,5 @@
 @extends('admin.maindesign')
-@section('add_doctors')
+@section('main')
 <form action="{{ route('add_doctors.store') }}" method="post" enctype="multipart/form-data" style="padding-left: 100px;">
     @csrf
   @if(session('success'))

@@ -63,8 +63,8 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                 <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}"> Add Patients </a></li>
-                <li class="nav-item"> <a class="nav-link" href="{{ route('view_doctors') }}"> View Patients </a></li>
+                 <li class="nav-item"> <a class="nav-link" href="{{ route('add_patients') }}"> Add Patients </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('view_patients') }}"> View Patients </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Patients prascris </a></li>
                
               </ul>

@@ -41,10 +41,20 @@ Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth
      
 });  
 
-Route::middleware('auth', 'doctor')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::middleware(['auth', 'doctor', 'verified'])->group(function () {
+    Route::get('/add_patients', [DoctorController::class, 'addPatients'])->name('add_patients');
+    Route::post('/add_patients', [DoctorController::class, 'store'])->name('add_patients.store');
+    Route::get('/view_patients', [DoctorController::class, 'viewPatients'])->name('view_patients');
+       Route::get('/delete_patient/{id}',[DoctorController::class,'deletePatient'] )->name('delete_patient');
+     Route::get('/update_patient/{id}',[DoctorController::class,'updatePatient'] )->name('update_patient');
+     
+     Route::post('/update_patient/{id}',[DoctorController::class, 'postUpdatePatient'])->name('post_update_patients'); 
+    
+
+        
+  
+        
+        
 });
 
 Route::middleware('auth')->group(function () {
