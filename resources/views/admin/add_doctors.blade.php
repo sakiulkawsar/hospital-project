@@ -1,42 +1,46 @@
 @extends('admin.maindesign')
 @section('main')
-<form action="{{ route('add_doctors.store') }}" method="post" enctype="multipart/form-data" style="padding-left: 100px;">
-    @csrf
-  @if(session('success'))
+
+
+<div class="page-section">
+    <div class="container">
+      <h1 class="text-center wow fadeInUp">Get in Touch</h1>
+
+      <form class="contact-form mt-5" action="{{ route('add_doctors.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+          @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
 @endif
-    <label>Fill the from</label>
-    <div>
-       
-        <input type="text" name="doctors_name" placeholder="Enter Doctor name">
+        
+        <div class="row mb-3">
+          <div class="col-sm-6 py-2 wow fadeInLeft">
+            <label for="fullName">Doctor Name</label>
+            <input type="text" id="fullName" name="doctors_name" class="form-control" placeholder="Doctor name..">
+          </div>
+          <div class="col-sm-6 py-2 wow fadeInRight">
+            <label for="emailAddress">Doctor Phone number</label>
+            <input type="text" id="emailAddress" name="doctors_phone" class="form-control" placeholder="doctors phone..">
+          </div>
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">Specialty</label>
+            <input type="text" id="subject" name="specialty" class="form-control" placeholder="Enter specialty..">
+          </div>
 
-    </div><br><br>
+             <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">Room Number</label>
+            <input type="text" id="subject" name="room_number" class="form-control" placeholder="Enter room_number..">
+          </div>
 
-        <div>
-        <input type="text" name="doctors_phone" placeholder="Enter Doctor phone">
-
-    </div><br><br>
-
-        <div>
-        <input type="text" name="specialty" placeholder="Enter Doctor specialty">
-
-    </div><br><br>
-
-        <div>
-        <input type="text" name="room_number" placeholder="Enter Doctor room">
-
-    </div><br><br>
-
-        <div>
-            <label style="border-radius: 12px; padding: 8px" class="bg bg-primary" for="doctor_image">Upload doctor's image</label>
-        <input type="file" name="doctor_image" >
-
-    </div><br><br>
-    <div>
-        <input type="submit" name="submit" value="add-doctor">
+            <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">Image</label>
+            <input type="file" id="subject" name="doctor_image" class="form-control">
+          </div>
+         
+        </div>
+        <button type="submit" class="btn btn-primary wow zoomIn">Add-Doctor</button>
+      </form>
     </div>
-
-</form>
+  </div>
 @endsection

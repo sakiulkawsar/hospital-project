@@ -1,37 +1,41 @@
 @extends('doctor.main')
 @section('main')
-<form action="{{ route('add_patients.store') }}" method="post" enctype="multipart/form-data" style="padding-left: 100px;">
-    @csrf
-  @if(session('success'))
+
+
+  <div class="page-section">
+    <div class="container">
+      <h1 class="text-center wow fadeInUp">Get in Touch</h1>
+
+      <form class="contact-form mt-5" action="{{ route('add_patients.store') }}" method="post" enctype="multipart/form-data">
+        @csrf
+          @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
     </div>
 @endif
-    <label>Fill the from</label>
-    <div>
-       
-        <input type="text" name="patients_name" placeholder="Enter Patients name">
+        
+        <div class="row mb-3">
+          <div class="col-sm-6 py-2 wow fadeInLeft">
+            <label for="fullName">Patient Name</label>
+            <input type="text" id="fullName" name="patients_name" class="form-control" placeholder="Patient name..">
+          </div>
+          <div class="col-sm-6 py-2 wow fadeInRight">
+            <label for="emailAddress">Patient Phone number</label>
+            <input type="text" id="emailAddress" name="patients_phone" class="form-control" placeholder="Patient phone..">
+          </div>
+          <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">Problem</label>
+            <input type="text" id="subject" name="problem" class="form-control" placeholder="Enter problem..">
+          </div>
 
-    </div><br><br>
-
-        <div>
-        <input type="text" name="patients_phone" placeholder="Enter Patients phone">
-
-    </div><br><br>
-
-        <div>
-        <input type="text" name="problem" placeholder="Enter Patients Problem">
-
-    </div><br><br>
-
-        <div>
-            <label style="border-radius: 12px; padding: 8px" class="bg bg-primary" for="patients_image">Upload Patients's image</label>
-        <input type="file" name="patient_image" >
-
-    </div><br><br>
-    <div>
-        <input type="submit" name="submit" value="add-patients">
+            <div class="col-12 py-2 wow fadeInUp">
+            <label for="subject">Image</label>
+            <input type="file" id="subject" name="patient_image" class="form-control">
+          </div>
+         
+        </div>
+        <button type="submit" class="btn btn-primary wow zoomIn">Add-Patient</button>
+      </form>
     </div>
-
-</form>
+  </div>
 @endsection
