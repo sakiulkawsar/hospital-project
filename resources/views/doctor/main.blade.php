@@ -70,6 +70,26 @@
               </ul>
             </div>
           </li>
+
+              <li class="nav-item menu-items">
+           <a class="nav-link" data-toggle="collapse" href="#clinicalMenu" aria-expanded="false" aria-controls="clinicalMenu">
+
+              <span class="menu-icon">
+                <i class="mdi mdi-laptop"></i>
+              </span>
+              <span class="menu-title">Clinical test</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="clinicalMenu">
+
+              <ul class="nav flex-column sub-menu">
+                 <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}"> Add Test</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('view_doctors') }}"> View Test </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Doctor Appointment </a></li>
+               
+              </ul>
+            </div>
+          </li>
         
         </ul>
       </nav>
