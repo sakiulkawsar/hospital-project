@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Patient;
+use App\Models\ClinicalTest;
 
 class DoctorController extends Controller
 {
@@ -99,7 +100,33 @@ class DoctorController extends Controller
 
     return redirect()->back()->with('success', 'Patient updated successfully');
 }
+     public function addTest(){
+        return view('doctor.addTest');
+     }
 
+     public function postAddTest(Request $request)
+{
+    dd($request->all());
 
-    }
+    $request->validate([
+        'patients_name'  => 'required|string|max:255',
+        'patients_phone' => 'required|string|max:20',
+        'problem'        => 'required|string|max:255',
+        'test_name'      => 'required|string|max:255',
+        'amount'         => 'required|numeric',
+    ]);
+
+    $clinicalTest = new ClinicalTest();
+    $clinicalTest->patients_name  = $request->patients_name;
+    $clinicalTest->patients_phone = $request->patients_phone;
+    $clinicalTest->problem        = $request->problem;
+    $clinicalTest->test_name      = $request->test_name;
+    $clinicalTest->amount         = $request->amount;
+
+    $clinicalTest->save();
+
+    return back()->with('success', 'Clinical test added successfully');
+ 
+}
+}
 
