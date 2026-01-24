@@ -24,6 +24,7 @@ Route::post('/appointment', [UserController::class,'Appointment'])->name('appoin
 
 Route::get('/contact',[userController::class,'contact'])->name('contact');
 Route::get('/appointment',[userController::class,'appointments'])->name('appointment');
+Route::get('/about',[userController::class,'about'])->name('about');
 
 
 Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth', 'verified'])->name('dashboard');

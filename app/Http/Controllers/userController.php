@@ -65,4 +65,8 @@ public function appointments(){
     return view('appointment');
 }
 
+public function about(){
+    return view('about');
+}
+
 }

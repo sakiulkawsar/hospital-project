@@ -1,6 +1,6 @@
 @extends('maindesign')
 
-@section('all_doctors')
+@section('main')
 
 <div class="page-section">
     <div class="container">

@@ -1,5 +1,5 @@
 @extends('maindesign')
-@section('all_doctors')
+@section('main')
 @include('hero')
   
 

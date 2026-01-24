@@ -71,7 +71,7 @@
             <a class="nav-link" href="{{ route('Index') }}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
+              <a class="nav-link" href="{{ route('about') }}">About Us</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{ route('alldoctors') }}">Doctors</a>
@@ -115,7 +115,8 @@
   <!-- .bg-light -->
   
 
-@yield('all_doctors')
+@yield('main')
+
 {{-- @yield('contact') --}}
 
 
