@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Test;
+use App\Models\MedicalTest;
 use Illuminate\Http\Request;
 
 
@@ -15,8 +15,8 @@ class TestController extends Controller
     public function index()
 
     {    
-        dd(Test::all());
-        return view('doctor.addTest');
+        // dd(Test::all());
+        // return view('doctor.addTest');
 
     }
 
@@ -39,7 +39,7 @@ class TestController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Test $test)
+    public function show(MedicalTest $test)
     {
         //
     }
@@ -47,7 +47,7 @@ class TestController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Test $test)
+    public function edit(MedicalTest $test)
     {
         //
     }
@@ -55,7 +55,7 @@ class TestController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Test $test)
+    public function update(Request $request, MedicalTest $test)
     {
         //
     }
@@ -63,7 +63,7 @@ class TestController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Test $test)
+    public function destroy(MedicalTest $test)
     {
         //
     }
