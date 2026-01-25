@@ -19,7 +19,13 @@ return new class extends Migration
             $table->string('specialty')->nullable();
             $table->string('number')->nullable();
             $table->string('message')->nullable();
-            $table->string('status')->default('inprogress');
+            $table->enum('status', [
+                'In Progress',
+                'Confirmed',
+                'Completed',
+                'Cancelled'
+            ])->default('In Progress')
+              ->after('doctor_id');
             $table->timestamps();
         });
     }

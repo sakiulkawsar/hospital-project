@@ -4,23 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Appointment;
 
-class MedicalTest extends Model
+class Payment extends Model
 {
-
     use HasFactory;
 
-      protected $fillable = [
+    protected $fillable = [
         'appointment_id',
-        'test_name',
         'amount',
+        'transaction_id',
+        'status',
+        'payment_method',
+        'notes',
     ];
-
 
     public function appointment()
     {
         return $this->belongsTo(Appointment::class);
     }
-    
 }

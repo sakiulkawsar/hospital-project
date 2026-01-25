@@ -71,7 +71,9 @@ class AdminController extends Controller
 
     }
    public function viewAppointment(){
-    $appointments = Appointment::all(); // plural
+    $appointments = Appointment::with('specialty', 'doctor')
+                    ->orderBy('submission_date', 'desc')
+                    ->get();
     return view('admin.view_appointment', compact('appointments'));
     }
 

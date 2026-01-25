@@ -12,8 +12,27 @@ class Appointment extends Model
         'full_name',
         'email_address',
         'submission_date',
-        'specialty',
+        'specialty_id',
+        'doctor_id',
         'number',
         'message',
+        'status',
+        'appointment_date',
+        'appointment_time',
     ];
+
+    public function specialty()
+    {
+        return $this->belongsTo(Specialty::class);
+    }
+
+    public function doctor()
+    {
+        return $this->belongsTo(Doctor::class);
+    }
+
+    public function payments()
+    {
+        return $this->hasMany(Payment::class);
+    }
 }

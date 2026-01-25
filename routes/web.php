@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\SpecialtyController;
 
 
 /*
@@ -33,12 +34,13 @@ Route::get('/dashboard',[UserController::class,'Dashboard'] )->middleware(['auth
   Route::middleware('auth','admin')->group(function () {
     Route::get('/add_doctors',[AdminController::class,'addDoctors'] )->middleware(['auth', 'verified'])->name('add_doctors');
     Route::post('/add_doctors',[AdminController::class,'postAddDoctors'] )->middleware(['auth', 'verified'])->name('add_doctors.store');
-     Route::get('/view_doctors',[AdminController::class,'viewDoctors'] )->middleware(['auth', 'verified'])->name('view_doctors');
-     Route::get('/delete_doctor/{id}',[AdminController::class,'deleteDoctor'] )->name('delete_doctor');
-     Route::get('/update_doctor/{id}',[AdminController::class,'updateDoctor'] )->name('update_doctor');
-     Route::post('/post_update_doctors/{id}',[AdminController::class,'postUpdateDoctors'] )->name('post_update_doctors');
-     Route::get('/view_appointment',[AdminController::class,'viewAppointment'] )->name('view_appointment');
-      Route::post('/changestatus/{id}',[AdminController::class,'changeStatus'] )->name('changestatus');
+    Route::get('/view_doctors',[AdminController::class,'viewDoctors'] )->middleware(['auth', 'verified'])->name('view_doctors');
+    Route::get('/delete_doctor/{id}',[AdminController::class,'deleteDoctor'] )->name('delete_doctor');
+    Route::get('/update_doctor/{id}',[AdminController::class,'updateDoctor'] )->name('update_doctor');
+    Route::post('/post_update_doctors/{id}',[AdminController::class,'postUpdateDoctors'] )->name('post_update_doctors');
+    Route::get('/view_appointment',[AdminController::class,'viewAppointment'] )->name('view_appointment');
+    Route::post('/changestatus/{id}',[AdminController::class,'changeStatus'] )->name('changestatus');
+    Route::resource('specialties', SpecialtyController::class);
      
 });  
 

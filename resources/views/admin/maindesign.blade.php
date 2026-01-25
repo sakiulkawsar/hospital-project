@@ -66,7 +66,10 @@
                  <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}"> Add Doctors </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('view_doctors') }}"> View Doctors </a></li>
                 <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Doctor Appointment </a></li>
-               
+              </ul>
+              <ul class="nav flex-column sub-menu">
+                 <li class="nav-item"> <a class="nav-link" href="{{ route('specialties.create') }}"> Add Specialty </a></li>
+                <li class="nav-item"> <a class="nav-link" href="{{ route('specialties.index') }}"> View Specialty </a></li>
               </ul>
             </div>
           </li>

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Doctor;
 use App\Models\Appointment;
-
+use App\Models\Specialty;
 
 class userController extends Controller
 {
@@ -40,12 +40,21 @@ class userController extends Controller
 
 public function Appointment(Request $request)
 {
+    $request->validate([
+        'full_name'     => 'required|string|max:255',
+        'email_address' => 'required|email|max:255',
+        'submission_date' => 'required|date',
+        'specialty_id'  => 'required|exists:specialties,id',
+        'number'        => 'required|string|max:20',
+        'message'       => 'required|string|max:1000',
+    ]);
+
     $appointment = new Appointment();
 
     $appointment->full_name = $request->full_name;
     $appointment->email_address = $request->email_address;
     $appointment->submission_date = $request->submission_date;
-    $appointment->specialty = $request->specialty;
+    $appointment->specialty_id = $request->specialty_id;
     $appointment->number = $request->number;
     $appointment->message = $request->message;
 
@@ -61,8 +70,11 @@ public function contact()
 }
 
 
-public function appointments(){
-    return view('appointment');
+public function appointments()
+{
+    $specialties = Specialty::all();
+
+    return view('appointment', compact('specialties'));
 }
 
 public function about(){
