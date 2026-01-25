@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ClinicalTest extends Model
+class Test extends Model
 {
     use HasFactory;
-         protected $fillable = [
+       protected $fillable = [
         'patients_name',
         'patients_phone',
         'problem',
@@ -16,4 +16,5 @@ class ClinicalTest extends Model
         'amount',
         
     ];
+    
 }
