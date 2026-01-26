@@ -5,68 +5,66 @@ namespace App\Http\Controllers;
 use App\Models\MedicalTest;
 use Illuminate\Http\Request;
 
-
-
-class TestController extends Controller
+class MedicalTestController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
-
-    {    
+    {
         $medicalTests = MedicalTest::latest()->get();
-        return view('doctor.medicalTests.addTest', compact('medicalTests'));
-        // dd(Test::all());
-        // return view('doctor.addTest');
-
+        return view('doctor.medicalTests.index', compact('medicalTests'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        //
+        return view('doctor.medicalTests.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'patients_name'  => 'required|string|max:255',
+            'patients_phone' => 'required|string|max:20',
+            'problem'        => 'required|string|max:255',
+            'test_name'      => 'required|string|max:255',
+            'amount'         => 'required|numeric|min:0',
+        ]);
+
+        MedicalTest::create($request->all());
+
+        return redirect()
+            ->route('medical_tests.index')
+            ->with('success', 'Clinical test added successfully');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(MedicalTest $test)
+    public function edit(MedicalTest $medicalTest)
     {
-        //
+        return view('doctor.medicalTests.edit', compact('medicalTest'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(MedicalTest $test)
+    public function update(Request $request, MedicalTest $medicalTest)
     {
-        //
+        $request->validate([
+            'patients_name'  => 'required|string|max:255',
+            'patients_phone' => 'required|string|max:20',
+            'problem'        => 'required|string|max:255',
+            'test_name'      => 'required|string|max:255',
+            'amount'         => 'required|numeric|min:0',
+        ]);
+
+        $medicalTest->update($request->all());
+
+        return redirect()
+            ->route('medical_tests.index')
+            ->with('success', 'Clinical test updated successfully');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, MedicalTest $test)
+    public function destroy(MedicalTest $medicalTest)
     {
-        //
-    }
+        $medicalTest->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(MedicalTest $test)
-    {
-        //
+        return redirect()
+            ->route('medical_tests.index')
+            ->with('success', 'Medical test deleted successfully');
     }
 }
+
+

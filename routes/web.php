@@ -58,7 +58,7 @@ Route::middleware(['auth', 'doctor', 'verified'])->group(function () {
     // Route::get('/addTest', [DoctorController::class, 'addTest'])->name('addTest');
     // Route::post('/addTest', [DoctorController::class, 'postAddTest'])->name('addTest.store');
 
-    Route::resource('medicalTests', MedicalTestController::class);
+    Route::resource('medical_tests', MedicalTestController::class);
 
 
 

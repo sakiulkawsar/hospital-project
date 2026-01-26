@@ -11,12 +11,12 @@ class MedicalTest extends Model
 
     use HasFactory;
 
-     protected $fillable = [
-        'patients_name',
-        'patients_phone',
-        'problem',
-        'test_name',
-        'amount',
+protected $fillable = [
+    'patients_name',
+    'patients_phone',
+    'problem',
+    'test_name',
+    'amount',
     ];
 
 

@@ -1,12 +1,12 @@
 @extends('doctor.main')
-
+<base href="/public">
 @section('main')
 <div class="page-section">
     <div class="container">
         <h1 class="text-center wow fadeInUp">Add Clinical Test</h1>
 
         <form class="contact-form mt-5"
-              action="{{ route('addTest.store') }}"
+              action="{{ route('medical_tests.store') }}"
               method="POST">
             @csrf
 
