@@ -7,6 +7,9 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\SpecialtyController;
+use App\Http\Controllers\MedicalTestController;
+
+
 
 
 /*
@@ -52,9 +55,12 @@ Route::middleware(['auth', 'doctor', 'verified'])->group(function () {
      Route::get('/update_patient/{id}',[DoctorController::class,'updatePatient'] )->name('update_patient');
      
      Route::post('/post_update_patient/{id}',[DoctorController::class, 'postUpdatePatient'])->name('post_update_patients'); 
-    Route::get('/addTest', [DoctorController::class, 'addTest'])->name('addTest');
-    Route::post('/addTest', [DoctorController::class, 'postAddTest'])->name('addTest.store');
-    
+    // Route::get('/addTest', [DoctorController::class, 'addTest'])->name('addTest');
+    // Route::post('/addTest', [DoctorController::class, 'postAddTest'])->name('addTest.store');
+
+    Route::resource('medicalTests', MedicalTestController::class);
+
+
 
         
   

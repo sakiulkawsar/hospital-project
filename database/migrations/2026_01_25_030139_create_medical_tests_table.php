@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('medical_tests', function (Blueprint $table) {
             $table->id();
-               $table->string('patients_name')->fillable();
+            $table->string('patients_name')->fillable();
             $table->string('patients_phone')->fillable();
             $table->string('problem')->fillable();
             $table->string('test_name')->fillable();

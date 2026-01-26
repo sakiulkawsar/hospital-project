@@ -15,6 +15,8 @@ class TestController extends Controller
     public function index()
 
     {    
+        $medicalTests = MedicalTest::latest()->get();
+        return view('doctor.medicalTests.addTest', compact('medicalTests'));
         // dd(Test::all());
         // return view('doctor.addTest');
 
