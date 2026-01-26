@@ -8,9 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\MedicalTestController;
-
-
-
+use App\Http\Controllers\PrescriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,6 +57,10 @@ Route::middleware(['auth', 'doctor', 'verified'])->group(function () {
     // Route::post('/addTest', [DoctorController::class, 'postAddTest'])->name('addTest.store');
 
     Route::resource('medical_tests', MedicalTestController::class);
+
+    Route::resource('prescriptions', PrescriptionController::class);
+Route::get('prescriptions/{prescription}/pdf', [PrescriptionController::class, 'pdf'])->name('prescriptions.pdf');
+
 
 
 

@@ -77,7 +77,7 @@
                             <li class="nav-item"> <a class="nav-link" href="{{ route('view_patients') }}"> View Patients
                                 </a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Patients
-                                    prascris </a></li>
+                                    Request </a></li>
 
                         </ul>
                     </div>
@@ -115,8 +115,10 @@
                     <div class="collapse" id="doctorMenu">
 
                         <ul class="nav flex-column sub-menu">
-                            <a class="nav-link" href="{{ route('medical_tests.create') }}">Add Test</a>
-                            <a class="nav-link" href="{{ route('medical_tests.index') }}">View Test</a>
+                            <a class="nav-link" href="{{ route('prescriptions.create') }}">Create Prescription</a>
+
+
+                            <a class="nav-link" href="{{ route('prescriptions.index') }}">View Prescriptions</a>
                        </ul>
                     </div>
                 </li>
