@@ -6,24 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('patient_id'); // link to patients
-            $table->unsignedBigInteger('doctor_id'); // link to doctors
-            $table->text('medicines'); // medicine list, you can store JSON or plain text
+            $table->foreignId('appointment_id')->constrained()->onDelete('cascade');
             $table->text('notes')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
     public function down(): void
     {
         Schema::dropIfExists('prescriptions');

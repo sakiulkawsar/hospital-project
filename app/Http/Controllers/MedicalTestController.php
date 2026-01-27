@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MedicalTest;
+
 use Illuminate\Http\Request;
 
 class MedicalTestController extends Controller
@@ -65,6 +66,8 @@ class MedicalTestController extends Controller
             ->route('medical_tests.index')
             ->with('success', 'Medical test deleted successfully');
     }
+    
+
 }
 
 
