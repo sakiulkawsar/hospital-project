@@ -60,8 +60,10 @@
                                         {{-- View --}}
                                         <a href="{{ route('prescriptions.show', $prescription->id) }}" 
                                            class="btn btn-sm btn-info" 
+                                           
                                            title="View">
                                             <i class="fas fa-eye"></i>
+                                            <p>View</p>
                                         </a>
 
                                         {{-- Edit --}}
@@ -69,6 +71,7 @@
                                            class="btn btn-sm btn-warning" 
                                            title="Edit">
                                             <i class="fas fa-edit"></i>
+                                            <p>Edit</p>
                                         </a>
 
                                         {{-- Download PDF --}}
@@ -76,6 +79,7 @@
                                            class="btn btn-sm btn-success" 
                                            title="Download PDF">
                                             <i class="fas fa-file-pdf"></i>
+                                            <p>PDF</p>
                                         </a>
 
                                         {{-- Delete --}}
@@ -89,6 +93,7 @@
                                                     type="submit" 
                                                     title="Delete">
                                                 <i class="fas fa-trash"></i>
+                                                <p>Delete</p>
                                             </button>
                                         </form>
                                     </div>

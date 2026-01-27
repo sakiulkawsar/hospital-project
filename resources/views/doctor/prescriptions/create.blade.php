@@ -101,29 +101,6 @@
     </div>
 </div>
 
-<style>
-    .medicine-row {
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        padding: 20px;
-        margin-bottom: 15px;
-        position: relative;
-    }
-
-    .medicine-row .remove-medicine {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-    }
-
-    .medicine-number {
-        font-weight: bold;
-        color: #495057;
-        margin-bottom: 15px;
-        font-size: 1.1rem;
-    }
-</style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
