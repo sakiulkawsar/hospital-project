@@ -76,8 +76,7 @@
                                 </a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{ route('view_patients') }}"> View Patients
                                 </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Patients
-                                    Request </a></li>
+                         <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Doctor Appointment </a></li>
 
                         </ul>
                     </div>

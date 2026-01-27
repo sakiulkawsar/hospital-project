@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Exception;
 use App\Models\Patient;
 use App\Models\MedicalTest;
+use App\Models\Appointment;
 
 class DoctorController extends Controller
 {
@@ -133,4 +134,5 @@ class DoctorController extends Controller
 
             return redirect()->back()->with('success', 'Clinical test added successfully');
         }
+
 }
