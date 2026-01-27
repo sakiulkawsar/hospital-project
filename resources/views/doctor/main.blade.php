@@ -67,16 +67,16 @@
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
                         </span>
-                        <span class="menu-title">Doctor page</span>
+                        <span class="menu-title">View Patient</span>
                         <i class="menu-arrow"></i>
                     </a>
                     <div class="collapse" id="ui-basic">
                         <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('add_patients') }}"> Add Patients
+                            {{-- <li class="nav-item"> <a class="nav-link" href="{{ route('add_patients') }}"> Add Patients
                                 </a></li>
                             <li class="nav-item"> <a class="nav-link" href="{{ route('view_patients') }}"> View Patients
-                                </a></li>
-                         <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Doctor Appointment </a></li>
+                                </a></li> --}}
+                         <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Patient Appointment </a></li>
 
                         </ul>
                     </div>
