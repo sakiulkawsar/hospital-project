@@ -94,7 +94,7 @@ class PrescriptionController extends Controller
      */
     public function show(Prescription $prescription)
     {
-        $prescription->load(['appointment.patient', 'medicines']);
+        $prescription->load(['appointment', 'medicines']);
         return view('doctor.prescriptions.show', compact('prescription'));
     }
 
@@ -103,8 +103,8 @@ class PrescriptionController extends Controller
      */
     public function edit(Prescription $prescription)
     {
-        $prescription->load(['appointment.patient', 'medicines']);
-        $appointments = Appointment::with(['patient', 'specialty', 'doctor'])
+        $prescription->load(['appointment', 'medicines']);
+        $appointments = Appointment::with(['specialty', 'doctor'])
             ->orderBy('submission_date', 'desc')
             ->get();
 

@@ -24,8 +24,7 @@ return new class extends Migration
                 'Confirmed',
                 'Completed',
                 'Cancelled'
-            ])->default('In Progress')
-              ->after('doctor_id');
+            ])->default('In Progress');
             $table->timestamps();
         });
     }
