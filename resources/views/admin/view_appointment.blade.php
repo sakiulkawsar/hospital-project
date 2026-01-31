@@ -2,6 +2,7 @@
 
 @section('main')
 <div class="container-fluid">
+     
     <!-- table wrapper for horizontal scroll -->
     <div class="table-responsive">
         <table class="table table-bordered table-sm text-center">
@@ -41,6 +42,7 @@
                             <input class="btn btn-primary btn-sm mt-1" type="submit" value="Update">
                         </form>
                     </td>
+                    
 
                 </tr>
                 @endforeach

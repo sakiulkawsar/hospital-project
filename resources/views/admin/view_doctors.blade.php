@@ -5,6 +5,12 @@
 <div class="container-fluid ">
     <div class="row m-0">
         <div class="col-12 p-0">
+             <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1>Prescriptions</h1>
+            <a href="{{ route('add_doctors') }}" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add new doctor
+            </a>
+        </div>
 
 <table class="table table-bordered text-center w-100">
     <thead>

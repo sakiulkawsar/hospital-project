@@ -73,6 +73,25 @@
               </ul>
             </div>
           </li>
+
+            <li class="nav-item menu-items">
+                    <a class="nav-link" data-toggle="collapse" href="#clinicalMenu" aria-expanded="false"
+                        aria-controls="clinicalMenu">
+
+                        <span class="menu-icon">
+                            <i class="mdi mdi-laptop"></i>
+                        </span>
+                        <span class="menu-title">Rooms</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="clinicalMenu">
+
+                        <ul class="nav flex-column sub-menu">
+                            <a class="nav-link" href="{{ route('room.create') }}">Add room</a>
+                            <a class="nav-link" href="{{ route('room.index') }}">View rooms</a>
+                        </ul>
+                    </div>
+                </li>
              
          
         

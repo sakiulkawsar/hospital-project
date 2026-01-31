@@ -100,8 +100,8 @@
                         </ul>
                     </div>
                 </li>
-
-                  <li class="nav-item menu-items">
+                
+                 <li class="nav-item menu-items">
                     <a class="nav-link" data-toggle="collapse" href="#doctorMenu" aria-expanded="false"
                         aria-controls="#doctorMenu">
 

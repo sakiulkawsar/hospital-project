@@ -9,6 +9,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\MedicalTestController;
 use App\Http\Controllers\PrescriptionController;
+use App\Http\Controllers\RoomController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,7 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('/update_doctor/{id}', [AdminController::class, 'updateDoctor'])->name('update_doctor');
     Route::post('/post_update_doctors/{id}', [AdminController::class, 'postUpdateDoctors'])->name('post_update_doctors');
     Route::resource('specialties', SpecialtyController::class);
+    Route::resource('room', RoomController::class);
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
@@ -61,6 +63,7 @@ Route::middleware(['auth', 'doctor', 'verified'])->group(function () {
     // Route::post('/addTest', [DoctorController::class, 'postAddTest'])->name('addTest.store');
 
     Route::resource('medical_tests', MedicalTestController::class);
+    
 
     Route::resource('prescriptions', PrescriptionController::class);
     Route::get('prescriptions/{prescription}/pdf', [PrescriptionController::class, 'pdf'])->name('prescriptions.pdf');
