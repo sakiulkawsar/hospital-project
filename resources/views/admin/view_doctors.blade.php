@@ -15,7 +15,8 @@
 <table class="table table-bordered text-center w-100">
     <thead>
         <tr style="background-color:lightblue;">
-            <th>Name</th>
+            <th>User</th>
+            <th>Email</th>
             <th>Phone</th>
             <th>Specialty</th>
             <th>Room</th>
@@ -26,10 +27,12 @@
     <tbody>
         @foreach ($doctors as $doctor)
         <tr>
-            <td>{{ $doctor->doctors_name }}</td>
+            <td>{{ $doctor->user->name ?? 'Not assigned' }}</td>
+            <td>{{ $doctor->user->email ?? '' }}</td>
             <td>{{ $doctor->doctors_phone }}</td>
             <td>{{ $doctor->specialty }}</td>
             <td>{{ $doctor->room_number }}</td>
+
             <td>
                 <img src="{{ $doctor->doctor_image_url }}"
                      style="width:100px;height:100px;">

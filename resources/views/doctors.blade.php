@@ -9,14 +9,14 @@
         <div class="item">
             <div class="card-doctor">
                 <div class="header">
-                    <img src="{{ $doctor->doctor_image_url }}" alt="{{ $doctor->doctors_name }}">
+                    <img src="{{ $doctor->doctor_image_url }}" alt="{{ optional($doctor->user)->name ?? 'No Name' }}">
                     <div class="meta">
                         <a href="#"><span class="mai-call"></span></a>
                         <a href="#"><span class="mai-logo-whatsapp"></span></a>
                     </div>
                 </div>
                 <div class="body">
-                    <p class="text-xl mb-0">{{ $doctor->doctors_name }}</p>
+                    <p class="text-xl mb-0">{{ optional($doctor->user)->name ?? 'No Name' }}</p>
                     <span class="text-sm text-grey">{{ $doctor->specialty }}</span>
                 </div>
             </div>

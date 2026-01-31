@@ -30,9 +30,12 @@ Route::get('/contact', [userController::class, 'contact'])->name('contact');
 Route::get('/appointment', [userController::class, 'appointments'])->name('appointment');
 Route::get('/about', [userController::class, 'about'])->name('about');
 
+Route::post('/payment_success/{id}', [AdminController::class, 'paymentSuccess'])->name('payment_success');
+Route::post('/payment_fail/{id}', [AdminController::class, 'paymentFail'])->name('payment_fail');
+Route::post('/payment_cancel/{id}', [AdminController::class, 'payment_cancel'])->name('payment_cancel');
+Route::post('/process_payment/{id}', [AdminController::class, 'processPayment'])->name('process_payment');
 
 Route::get('/dashboard', [UserController::class, 'Dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
-
 
 Route::middleware('auth', 'admin')->group(function () {
     Route::get('/add_doctors', [AdminController::class, 'addDoctors'])->middleware(['auth', 'verified'])->name('add_doctors');

@@ -15,9 +15,16 @@
 @endif
         
         <div class="row mb-3">
-          <div class="col-sm-6 py-2 wow fadeInLeft">
-            <label for="fullName">Doctor Name</label>
-            <input type="text" id="fullName" name="doctors_name" class="form-control" placeholder="Doctor name..">
+          <div class="col-12 py-2 wow fadeInUp">
+              <label for="user">Assign User</label>
+              <select name="user_id" class="form-select">
+                  <option value="">Select User</option>
+                  @foreach($users as $user)
+                      <option value="{{ $user->id }}">
+                          {{ $user->name }} ({{ $user->email }})
+                      </option>
+                  @endforeach
+              </select>
           </div>
           <div class="col-sm-6 py-2 wow fadeInRight">
             <label for="emailAddress">Doctor Phone number</label>

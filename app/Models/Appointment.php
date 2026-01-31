@@ -19,6 +19,8 @@ class Appointment extends Model
         'status',
         'appointment_date',
         'appointment_time',
+        'fee',
+        'payment_link'
     ];
 
     public function specialty()
@@ -39,5 +41,10 @@ class Appointment extends Model
     public function prescription()
     {
         return $this->hasOne(Prescription::class);
+    }
+
+    public function hasPaymentLink()
+    {
+        return !empty($this->payment_link);
     }
 }
