@@ -218,11 +218,9 @@ class AdminController extends Controller
 
         try {
             $response = Http::asForm()->post('https://sandbox.sslcommerz.com/gwprocess/v4/api.php', $post_data);
-
-            // Debug response
             $data = $response->json();
 
-            if ($response->successful() && isset($data['GatewayPageURL'])) {
+            if ($response->successful() && isset($data['GatewayPageURL']) && !empty($data['GatewayPageURL'])) {
 
                 $appointment->payment_link = $data['GatewayPageURL'];
                 $appointment->save();
@@ -238,7 +236,8 @@ class AdminController extends Controller
 
                 return redirect()->back()->with('success', 'Payment link generated successfully!');
             } else {
-                return redirect()->back()->with('error', 'SSLCommerz error: ' . json_encode($data));
+                $errorMsg = $data['failedreason'] ?? 'Unknown SSLCommerz error';
+                return redirect()->back()->with('error', 'SSLCommerz error: ' . $errorMsg);
             }
 
         } catch (\Exception $e) {
@@ -255,7 +254,6 @@ class AdminController extends Controller
         $amount = $request->input('amount');
         $currency = $request->input('currency');
 
-        // Find the payment record
         $payment = Payment::where('appointment_id', $appointment->id)
                           ->where('transaction_id', $tran_id)
                           ->first();

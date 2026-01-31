@@ -33,7 +33,6 @@ Route::get('/about', [userController::class, 'about'])->name('about');
 Route::post('/payment_success/{id}', [AdminController::class, 'paymentSuccess'])->name('payment_success');
 Route::post('/payment_fail/{id}', [AdminController::class, 'paymentFail'])->name('payment_fail');
 Route::post('/payment_cancel/{id}', [AdminController::class, 'payment_cancel'])->name('payment_cancel');
-Route::post('/process_payment/{id}', [AdminController::class, 'processPayment'])->name('process_payment');
 
 Route::get('/dashboard', [UserController::class, 'Dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
@@ -44,6 +43,7 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('/delete_doctor/{id}', [AdminController::class, 'deleteDoctor'])->name('delete_doctor');
     Route::get('/update_doctor/{id}', [AdminController::class, 'updateDoctor'])->name('update_doctor');
     Route::post('/post_update_doctors/{id}', [AdminController::class, 'postUpdateDoctors'])->name('post_update_doctors');
+    Route::post('/process_payment/{id}', [AdminController::class, 'processPayment'])->name('process_payment');
     Route::resource('specialties', SpecialtyController::class);
     Route::resource('room', RoomController::class);
 });
