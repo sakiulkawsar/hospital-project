@@ -19,7 +19,7 @@
 
     <div class="card shadow-sm">
 
-        <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+        <div class="card-header bg-danger text-white d-flex justify-content-between align-items-center">
             <h5 class="mb-0">Appointment List</h5>
 
             <span class="badge bg-dark">

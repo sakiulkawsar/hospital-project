@@ -307,4 +307,10 @@ class AdminController extends Controller
         return redirect()->route('appointment')
                         ->with('error', 'Payment canceled for appointment ID: ' . $appointment->id);
     }
+  public function ViewPayment()
+{
+    $payments = Payment::latest()->get();
+
+    return view('admin.view_payment', compact('payments'));
+}
 }

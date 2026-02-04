@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\MedicalTestController;
 use App\Http\Controllers\PrescriptionController;
@@ -44,7 +45,9 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('/update_doctor/{id}', [AdminController::class, 'updateDoctor'])->name('update_doctor');
     Route::post('/post_update_doctors/{id}', [AdminController::class, 'postUpdateDoctors'])->name('post_update_doctors');
     Route::post('/process_payment/{id}', [AdminController::class, 'processPayment'])->name('process_payment');
+    Route::get('/view_payment', [AdminController::class, 'ViewPayment'])->name('view_payment');
     Route::resource('specialties', SpecialtyController::class);
+    Route::resource('employee', EmployeeController::class);
     Route::resource('room', RoomController::class);
 });
 
