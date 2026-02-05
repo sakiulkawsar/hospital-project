@@ -11,13 +11,13 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = Employee::all();
-        return view('employee.index', compact('employees'));
+        return view('admin.employee.index', compact('employees'));
     }
 
     // Show form to create a new employee
     public function create()
     {
-        return view('employee.create'); // Make sure your Blade file exists at resources/views/employee/create.blade.php
+        return view('admin.employee.create');
     }
 
     // Store a new employee
@@ -35,13 +35,13 @@ class EmployeeController extends Controller
         Employee::create($request->all());
 
         return redirect()->route('employee.index')
-                         ->with('success', 'Employee added successfully');
+            ->with('success', 'Employee added successfully');
     }
 
     // Show form to edit an employee
     public function edit(Employee $employee)
     {
-        return view('employee.edit', compact('employee'));
+        return view('admin.employee.edit', compact('employee'));
     }
 
     // Update an employee
@@ -59,14 +59,15 @@ class EmployeeController extends Controller
         $employee->update($request->all());
 
         return redirect()->route('employee.index')
-                         ->with('success', 'Employee updated successfully');
+            ->with('success', 'Employee updated successfully');
     }
 
     // Delete an employee
     public function destroy(Employee $employee)
     {
         $employee->delete();
+
         return redirect()->route('employee.index')
-                         ->with('success', 'Employee deleted successfully');
+            ->with('success', 'Employee deleted successfully');
     }
 }
