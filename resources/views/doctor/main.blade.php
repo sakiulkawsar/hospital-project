@@ -97,6 +97,7 @@
                         <ul class="nav flex-column sub-menu">
                             <a class="nav-link" href="{{ route('medical_tests.create') }}">Add Test</a>
                             <a class="nav-link" href="{{ route('medical_tests.index') }}">View Test</a>
+                            <a class="nav-link" href="{{ route('invoice.create') }}">Create Invoice</a>
                         </ul>
                     </div>
                 </li>

@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\MedicalTestController;
 use App\Http\Controllers\PrescriptionController;
@@ -73,6 +74,7 @@ Route::middleware(['auth', 'doctor', 'verified'])->group(function () {
 
     Route::resource('prescriptions', PrescriptionController::class);
     Route::get('prescriptions/{prescription}/pdf', [PrescriptionController::class, 'pdf'])->name('prescriptions.pdf');
+    Route::resource('invoice', InvoiceController::class);
 });
 
 Route::middleware('auth')->group(function () {
