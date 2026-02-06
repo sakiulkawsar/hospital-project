@@ -112,8 +112,8 @@
                 </li>
 
                 <li class="nav-item menu-items">
-                    <a class="nav-link" data-toggle="collapse" href="#clinicalMenu" aria-expanded="false"
-                        aria-controls="clinicalMenu">
+                    <a class="nav-link" data-toggle="collapse" href="#employeeMenu" aria-expanded="false"
+                        aria-controls="employeeMenu">
 
                         <span class="menu-icon">
                             <i class="mdi mdi-laptop"></i>
@@ -121,14 +121,19 @@
                         <span class="menu-title">Employee</span>
                         <i class="menu-arrow"></i>
                     </a>
-                    <div class="collapse" id="clinicalMenu">
 
+                    <div class="collapse" id="employeeMenu">
                         <ul class="nav flex-column sub-menu">
-                            <a class="nav-link" href="{{ route('employee.create') }}">Add Employee</a>
-                            <a class="nav-link" href="{{ route('employee.index') }}">View Employee</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employee.create') }}">Add Employee</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employee.index') }}">View Employee</a>
+                            </li>
                         </ul>
                     </div>
                 </li>
+
 
 
 
