@@ -61,78 +61,83 @@
                     </span>
                 </li>
 
-                <li class="nav-item menu-items">
-                    <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
-                        aria-controls="ui-basic">
-                        <span class="menu-icon">
-                            <i class="mdi mdi-laptop"></i>
-                        </span>
-                        <span class="menu-title">Admin page</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="ui-basic">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('add_doctors') }}"> Add Doctors
-                                </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('view_doctors') }}"> View Doctors
-                                </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('view_appointment') }}"> Doctor
-                                    Appointment </a></li>
-                        </ul>
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('specialties.create') }}"> Add
-                                    Specialty </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('specialties.index') }}"> View
-                                    Specialty </a></li>
-                        </ul>
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="{{ route('view_payment') }}"> View Payment
-                                </a></li>
-                        </ul>
-                    </div>
-                </li>
+              <!-- Admin Page -->
+<li class="nav-item menu-items">
+    <a class="nav-link" data-toggle="collapse" href="#adminPageMenu" aria-expanded="false"
+        aria-controls="adminPageMenu">
+        <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Admin Page</span>
+        <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="adminPageMenu">
+        <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{{ route('add_doctors') }}">Add Doctors</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('view_doctors') }}">View Doctors</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('view_appointment') }}">Doctor Appointment</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('specialties.create') }}">Add Specialty</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('specialties.index') }}">View Specialty</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('view_payment') }}">View Payment</a></li>
+        </ul>
+    </div>
+</li>
 
-                <li class="nav-item menu-items">
-                    <a class="nav-link" data-toggle="collapse" href="#clinicalMenu" aria-expanded="false"
-                        aria-controls="clinicalMenu">
+<!-- Rooms -->
+<li class="nav-item menu-items">
+    <a class="nav-link" data-toggle="collapse" href="#roomsMenu" aria-expanded="false"
+        aria-controls="roomsMenu">
+        <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Rooms</span>
+        <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="roomsMenu">
+        <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{{ route('room.create') }}">Add Room</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('room.index') }}">View Rooms</a></li>
+        </ul>
+    </div>
+</li>
 
-                        <span class="menu-icon">
-                            <i class="mdi mdi-laptop"></i>
-                        </span>
-                        <span class="menu-title">Rooms</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="clinicalMenu">
+<!-- Employee -->
+<li class="nav-item menu-items">
+    <a class="nav-link" data-toggle="collapse" href="#employeeMenu" aria-expanded="false"
+        aria-controls="employeeMenu">
+        <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Employee</span>
+        <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="employeeMenu">
+        <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{{ route('employee.create') }}">Add Employee</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('employee.index') }}">View Employee</a></li>
+        </ul>
+    </div>
+</li>
 
-                        <ul class="nav flex-column sub-menu">
-                            <a class="nav-link" href="{{ route('room.create') }}">Add room</a>
-                            <a class="nav-link" href="{{ route('room.index') }}">View rooms</a>
-                        </ul>
-                    </div>
-                </li>
+<!-- Equipment -->
+<li class="nav-item menu-items">
+    <a class="nav-link" data-toggle="collapse" href="#equipmentMenu" aria-expanded="false"
+        aria-controls="equipmentMenu">
+        <span class="menu-icon">
+            <i class="mdi mdi-laptop"></i>
+        </span>
+        <span class="menu-title">Equipment</span>
+        <i class="menu-arrow"></i>
+    </a>
+    <div class="collapse" id="equipmentMenu">
+        <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="{{ route('equipment.create') }}">Add Equipment</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('equipment.index') }}">View Equipment</a></li>
+        </ul>
+    </div>
+</li>
 
-                <li class="nav-item menu-items">
-                    <a class="nav-link" data-toggle="collapse" href="#employeeMenu" aria-expanded="false"
-                        aria-controls="employeeMenu">
 
-                        <span class="menu-icon">
-                            <i class="mdi mdi-laptop"></i>
-                        </span>
-                        <span class="menu-title">Employee</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-
-                    <div class="collapse" id="employeeMenu">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('employee.create') }}">Add Employee</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('employee.index') }}">View Employee</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
 
 
 

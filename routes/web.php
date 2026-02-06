@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\SpecialtyController;
 use App\Http\Controllers\MedicalTestController;
@@ -50,6 +51,7 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::resource('specialties', SpecialtyController::class);
     Route::resource('employee', EmployeeController::class);
     Route::resource('room', RoomController::class);
+     Route::resource('equipment', EquipmentController::class);
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {
