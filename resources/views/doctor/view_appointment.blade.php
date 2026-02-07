@@ -58,6 +58,7 @@
                             <th>Specialty</th>
                             <th>Phone</th>
                             <th>Message</th>
+                            <th>Email</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -70,11 +71,19 @@
                             <td>{{ $appointment->submission_date }}</td>
                             <td>{{ $appointment->specialty->name ?? '' }}</td>
                             <td>{{ $appointment->number }}</td>
-
-                            <td style="max-width:200px;">
+                             <td style="max-width:200px;">
                                 {{ Str::limit($appointment->message, 40) }}
                             </td>
 
+                            <td>
+                              <div class="d-flex justify-content-between align-items-center mb-4">
+        
+        <a href="{{ route('mail',$appointment->id) }}" class="btn btn-primary">
+            <i class="fas fa-plus"></i> Email
+        </a>
+    </div></td>
+
+                           
                             <td>
                                 <span class="badge 
                                     @if($appointment->status == 'Confirmed') bg-success
