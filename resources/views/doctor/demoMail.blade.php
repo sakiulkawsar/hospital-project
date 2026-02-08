@@ -14,23 +14,32 @@
 
     <p>{{ $mailData['body'] }}</p>
 
-  
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    <p>Dear Patient,
 
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        We are pleased to confirm your appointment with our medical team.
 
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        Appointment Details:
+        Patient Name: [Patient Name]
+        Doctor Name: [Doctor Name]
+        Date: [Appointment Date]
+        Time: [Appointment Time]
+        Location: [Hospital/Clinic Name & Address]
 
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        Please arrive at least 10–15 minutes before your scheduled appointment time. If you need to reschedule or cancel your appointment, kindly contact us in advance.
 
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        If you have any medical reports or previous prescriptions, please bring them with you.
 
-     
+        Thank you for choosing our healthcare service. We look forward to serving you.
 
-    <p>Thank you</p>
+        Best Regards,
+        Sakiul Kawsar
+    </p>
+
+
+
+   
 
 </body>
 
