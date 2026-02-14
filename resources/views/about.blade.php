@@ -8,7 +8,7 @@
             <ol class="breadcrumb bg-transparent py-0 mb-5">
               <li class="breadcrumb-item"><a href="index.html">Home</a></li>
               <li class="breadcrumb-item"><a href="blog.html">Blog</a></li>
-              <li class="breadcrumb-item active" aria-current="page">List of Countries without Coronavirus case</li>
+              <li class="breadcrumb-item active" aria-current="page">List of Countries without Coronavirus case from hospital</li>
             </ol>
           </nav>
         </div>
@@ -37,9 +37,9 @@
                 <a href="#">8 Comments</a>
               </div>
             </div>
-            <h2 class="post-title h1">List of Countries without Coronavirus case</h2>
+            <h2 class="post-title h1">List of Countries without Coronavirus case from hospital</h2>
             <div class="post-content">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet est vel orci luctus sollicitudin. Duis eleifend vestibulum justo, varius semper lacus condimentum dictum. Donec pulvinar a magna ut malesuada. In posuere felis diam, vel sodales metus accumsan in. Duis viverra dui eu pharetra pellentesque. Donec a eros leo. Quisque sed ligula vitae lorem efficitur faucibus. Praesent sit amet imperdiet ante. Nulla id tellus auctor, dictum libero a, malesuada nisi. Nulla in porta nibh, id vestibulum ipsum. Praesent dapibus tempus erat quis aliquet. Donec ac purus id sapien condimentum feugiat.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet est vel orci luctus sollicitudin. Duis eleifend vestibulum justo, varius semper lacus condimentum dictum. Donec pulvinar a magna ut malesuada. In posuere felis diam, vel sodales metus accumsan in. Duis viverra dui eu pharetra pellentesque. Donec a eros leo. Quisque sed ligula vitae lorem efficitur faucibus. Praesent sit amet imperdiet ante. Nulla id tellus auctor, dictum libero a, malesuada nisi. Nulla in porta nibh, id vestibulum ipsum. Praesent dapibus tempus erat quis aliquet. Donec ac purus id sapien condimentum feugiat. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla fuga animi aliquid aperiam dolorem similique necessitatibus, odio magnam laborum blanditiis expedita quae vitae? Illum aliquam praesentium rem. Est, natus earum.</p>
 
               <p>Praesent vel mi bibendum, finibus leo ac, condimentum arcu. Pellentesque sem ex, tristique sit amet suscipit in, mattis imperdiet enim. Integer tempus justo nec velit fringilla, eget eleifend neque blandit. Sed tempor magna sed congue auctor. Mauris eu turpis eget tortor ultricies elementum. Phasellus vel placerat orci, a venenatis justo. Phasellus faucibus venenatis nisl vitae vestibulum. Praesent id nibh arcu. Vivamus sagittis accumsan felis, quis vulputate</p>
             </div>
