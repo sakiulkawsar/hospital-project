@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\MedicalTest;
-
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Http\Request;
 
 class MedicalTestController extends Controller
@@ -65,6 +65,19 @@ class MedicalTestController extends Controller
         return redirect()
             ->route('medical_tests.index')
             ->with('success', 'Medical test deleted successfully');
+    }
+
+
+    public function pdf(MedicalTest $medical_test)
+    {
+        $pdf = Pdf::loadView(
+            'doctor.medicalTests.pdf',
+            compact('medical_test')
+        )->setPaper('a4', 'portrait');
+
+        return $pdf->download(
+            'MedicalTest-' . str_pad($medical_test->id, 6, '0', STR_PAD_LEFT) . '.pdf'
+        );
     }
     
 

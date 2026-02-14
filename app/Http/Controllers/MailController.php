@@ -3,7 +3,7 @@
   
 
 namespace App\Http\Controllers;
-
+use App\Models\Appointment;
   
 
 use Illuminate\Http\Request;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 
 
-use App\Mail\DemoMail;
+use App\Mail\AppointmentMail;
 use Illuminate\Support\Facades\Mail as FacadesMail;
 
 class MailController extends Controller
@@ -28,25 +28,16 @@ class MailController extends Controller
 
      */
 
-    public function index()
+    public function index($id)
 
     {
 
-        $mailData = [
+        $appointment = Appointment::findOrFail($id);
 
-            'title' => 'Mail from ItSolutionStuff.com',
+        Mail::to($appointment->email_address)
+            ->send(new AppointmentMail($appointment));
 
-            'body' => 'This is for testing email using smtp.'
-
-        ];
-
-         
-
-        Mail::to('mr.sakiulkawsar@gmail.com')->send(new DemoMail($mailData));
-
-           
-
-        dd("Email is sent successfully.");
+        return back()->with('success', 'Appointment email sent successfully.');
 
     }
 

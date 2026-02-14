@@ -36,15 +36,20 @@
                     </a>
 
                     {{-- DELETE --}}
-                  <form action="{{ route('medical_tests.destroy', $test->id) }}"
-      method="POST" style="display:inline-block">
-    @csrf
-    @method('DELETE')
-    <button class="btn btn-sm btn-danger"
-            onclick="return confirm('Are you sure?')">
-        Delete
-    </button>
-</form>
+                    <form action="{{ route('medical_tests.destroy', $test->id) }}"
+                                method="POST" style="display:inline-block">
+                                @csrf
+                                @method('DELETE')
+                        <button class="btn btn-sm btn-danger"
+                                onclick="return confirm('Are you sure?')">
+                            Delete
+                        </button>
+                    </form>
+
+                    <a href="{{ route('medical_tests.pdf', $test->id) }}"
+                        class="btn btn-sm btn-success">
+                        Download PDF
+                    </a>
                 </td>
             </tr>
         @endforeach
